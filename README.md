@@ -1,2 +1,2 @@
 # selenium-ui-tests
-user interface test automation framework
+test automation framework with selenium & java
