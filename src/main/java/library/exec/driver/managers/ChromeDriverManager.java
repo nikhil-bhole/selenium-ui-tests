@@ -2,12 +2,17 @@ package library.exec.driver.managers;
 
 import library.exec.driver.factory.DriverManager;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 public class ChromeDriverManager extends DriverManager {
 
     @Override
     public void createDriver() {
-        driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--headless");
+        driver = new ChromeDriver(options);
     }
 
     @Override
